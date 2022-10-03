@@ -6,3 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+librucman = { git = "https://github.com/conqp/librucman.git", branch = "main" }
+clap = { version = "3.2.22", features = ["derive"] }
+
+[[bin]]
+name = "cmpver"
+path = "src/cmpver/main.rs"
