@@ -1,14 +1,15 @@
+use clap::Parser;
 use librucman::version::Version;
 use std::cmp::Ordering;
 
 mod args;
-use args::{parse, Args};
+use args::Args;
 
 fn main() {
-    let args = parse();
+    let args = Args::parse();
 
-    match Version::from_string(args.lhs()) {
-        Ok(lhs) => match Version::from_string(args.rhs()) {
+    match Version::from_string(&args.lhs) {
+        Ok(lhs) => match Version::from_string(&args.rhs) {
             Ok(rhs) => {
                 println!(
                     "{}",
@@ -20,11 +21,11 @@ fn main() {
                 );
             }
             Err(err) => {
-                eprintln!("Invalid version: {} ({})", args.rhs(), err);
+                eprintln!("Invalid version: {} ({})", args.rhs, err);
             }
         },
         Err(err) => {
-            eprintln!("Invalid version: {} ({})", args.lhs(), err);
+            eprintln!("Invalid version: {} ({})", args.lhs, err);
         }
     }
 }
