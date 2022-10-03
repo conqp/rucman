@@ -24,7 +24,7 @@ fn main() {
             }
         },
         Err(err) => {
-            eprintln!("Invalid version: {} ({})", args.rhs(), err);
+            eprintln!("Invalid version: {} ({})", args.lhs(), err);
         }
     }
 }
