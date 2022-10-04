@@ -20,6 +20,7 @@ def main():
     for index, (lhs, rhs) in enumerate(product(VERSIONS, VERSIONS), start=1):
         if index % 1000 == 0:
             print(index, "combinations processed")
+
         if (r1 := vercmp(lhs, rhs)) != (r2 := cmpver(lhs, rhs)):
             print(lhs, rhs, r1, r2)
 
