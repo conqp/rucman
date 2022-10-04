@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 librucman = { git = "https://github.com/conqp/librucman.git", branch = "main" }
-clap = { version = "3.2.22", features = ["derive"] }
+clap = { version = "*", features = ["derive"] }
