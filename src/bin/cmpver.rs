@@ -2,8 +2,18 @@ use clap::Parser;
 use librucman::version::Version;
 use std::cmp::Ordering;
 
-mod args;
-use args::Args;
+#[derive(Parser)]
+#[clap(name = "cmpver")]
+#[clap(author = "Richard Neumann <mail@richard-neumann.de>")]
+#[clap(version = "1.0.0")]
+#[clap(about = "Compare rucman package versions.", long_about = None)]
+struct Args {
+    #[clap(value_parser)]
+    pub lhs: String,
+
+    #[clap(value_parser)]
+    pub rhs: String,
+}
 
 fn main() {
     let args = Args::parse();
