@@ -1,5 +1,5 @@
 use clap::Parser;
-use librucman::version::Version;
+use librucman::Version;
 use std::cmp::Ordering;
 
 use rucman::cmpver::Args;
