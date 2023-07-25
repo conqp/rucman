@@ -6,8 +6,8 @@ from subprocess import check_output
 
 
 VERSIONS = [
-    line.split(" ")[1] for line in
-    check_output(["pacman", "-Q"], text=True).split("\n")
+    line.split(" ")[1]
+    for line in check_output(["pacman", "-Q"], text=True).split("\n")
     if line
 ]
 
@@ -37,5 +37,5 @@ def cmpver(lhs: str, rhs: str) -> str:
     return check_output(["cmpver", lhs, rhs], text=True).strip()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
